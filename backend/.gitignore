@@ -1,0 +1,34 @@
+Migrations
+app.db
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Visual Studio cache/options
+.vs/
+
+# Logs
+*.log
+
+# Sensitive configuration
+appsettings.Development.json
+appsettings.*.json
+
+# Database files
+*.db
+*.sqlite
+
+# Temporary files
+*.tmp
+*~
+
+# NuGet packages
+*.nupkg
+
+# Development environment files
+.env
