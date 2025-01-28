@@ -1,0 +1,7 @@
+[Frontend]
+- User Authentication
+- Task Management Table CRUD
+
+[Backend]
+- Create MVC for Task
+

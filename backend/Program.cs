@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 // using Microsoft.OpenApi.Models;
-using backend.ApplicationDbContext;
+using backend.Data;
 using backend.Services;
 
 
@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 
 // REGISTER SERVICES
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<UserTaskService>();
 
 
 // CONFIGURE CORS
@@ -34,8 +35,9 @@ builder.Services.AddCors(options =>
   options.AddPolicy(name: MyAllowSpecificOrigins,
     builder =>
     {
-      builder.WithOrigins(
-          "http://localhost:3000", "*");
+      builder.WithOrigins("http://localhost:3000")
+             .AllowAnyMethod()
+             .AllowAnyHeader();
     });
 });
 

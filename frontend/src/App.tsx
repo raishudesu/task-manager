@@ -1,15 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import Tasks from "./components/tasks";
+import AddUserForm from "./components/add-user-form";
+import Users from "./components/users";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Tasks />
+      <div
+        style={{ display: "grid", gap: "1rem", gridTemplateColumns: "1fr 1fr" }}
+      >
+        <div>
+          <h2>Users</h2>
+          <Users />
+        </div>
+        <div>
+          <h2>Add User</h2>
+          <AddUserForm />
+        </div>
+      </div>
     </>
   );
 }

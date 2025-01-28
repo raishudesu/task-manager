@@ -27,6 +27,15 @@ public class UserController : ControllerBase
         return user != null ? Ok(user) : NotFound();
     }
 
+    [HttpGet("{id}/tasks")]
+    public async Task<ActionResult<UserTask>> GetUserTasksByUserId(int id)
+    {
+        var userTasks = await _userService.GetUserTaskByUserId(id);
+
+        return Ok(userTasks);
+
+    }
+
     [HttpPost]
     public async Task<ActionResult<User>> Create(User user)
     {
