@@ -57,4 +57,26 @@ public class UserController : ControllerBase
         await _userService.DeleteUser(id);
         return NoContent();
     }
+
+    [HttpGet("{id}/with-tasks")]
+    public async Task<ActionResult<User>> GetUserWithTasks(int id)
+    {
+        var user = await _userService.GetUserById(id);
+
+        if (user == null) return NotFound();
+
+        try
+        {
+
+            var userWithTasks = await _userService.GetUserWithUserTasks(id);
+
+            return Ok(userWithTasks);
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception("An error occurred while fetching the user with tasks", ex);
+        }
+
+    }
 }

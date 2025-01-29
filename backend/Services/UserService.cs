@@ -62,4 +62,11 @@ public class UserService
         return user?.UserTasks.ToList() ?? new List<UserTask>();
 
     }
+
+    public async Task<User?> GetUserWithUserTasks(int id)
+    {
+        var user = await _context.Users.Include(u => u.UserTasks).FirstOrDefaultAsync(u => u.Id == id);
+
+        return user;
+    }
 }
