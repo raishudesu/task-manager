@@ -117,7 +117,7 @@ const Tasks = () => {
                   Update
                 </button>
                 <button
-                  onClick={() => handleDeleteTask(id)}
+                  onClick={() => handleDeleteTask(id as number)}
                   style={{ backgroundColor: "red" }}
                 >
                   Delete
